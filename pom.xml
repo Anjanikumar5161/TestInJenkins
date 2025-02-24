@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>TestInJenkins</groupId>
+  <artifactId>TestInJenkins</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <dependencies>
+    <!-- TestNG Dependency -->
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>7.10.2</version> <!-- You can change this version as per your requirement -->
+      <scope>test</scope>
+    </dependency>
+ <!-- Selenium WebDriver Dependency -->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.8.0</version> <!-- Use the appropriate version -->
+    </dependency>
+    <!-- Surefire Plugin for running tests in Maven -->
+    <dependency>
+      <groupId>org.apache.maven.surefire</groupId>
+      <artifactId>surefire-api</artifactId>
+      <version>3.0.0-M5</version> <!-- Ensure compatibility with TestNG -->
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Optional: If you need additional test libraries, you can include them here -->
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Surefire Plugin to run tests during Maven build -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M5</version> <!-- Ensure compatibility with TestNG -->
+        <configuration>
+          <suiteXmlFiles>
+            <!-- Path to your TestNG XML file (if you are using one) -->
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
